@@ -9,10 +9,14 @@ To use this with OpenShift, it is a simple matter of creating a new application 
 As an example, to build and host the the [Sphinx site](https://github.com/sphinx-doc/sphinx), you only need run:
 
 ```
-oc new-app getwarped/s2i-sphinx-server:1.4~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=doc
+oc new-build getwarped/s2i-sphinx-server:1.4~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=doc
+
+oc new-app sphinx-site
 
 oc expose svc/sphinx-site
 ```
+
+It was necessary in this case to create a build prior to the application as we needed to set the ``DOCUMENT_ROOT`` environment variable for the build. If this wasn't necessary then could have used just the first command but replace ``new-build`` with ``new-app``.
 
 To have any changes to your document source automatically redeployed when changes are pushed back up to your Git repository, you can use the [web hooks integration](https://docs.openshift.com/container-platform/latest/dev_guide/builds.html#webhook-triggers) of OpenShift to create a link from your Git repository hosting service back to OpenShift.
 
