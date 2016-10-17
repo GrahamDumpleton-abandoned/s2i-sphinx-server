@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eo pipefail
+
+WARPDRIVE_DEPLOY_MODE=mod_wsgi
+WARPDRIVE_SERVER_ARGS="--application-type static --document-root ${WARPDRIVE_APP_ROOT}/data/html"
+
+export WARPDRIVE_DEPLOY_MODE
+export WARPDRIVE_SERVER_ARGS
+
+exec ${WARPDRIVE_S2I_ROOT}/bin/run

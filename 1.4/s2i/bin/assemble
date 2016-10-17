@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eo pipefail
+
+${WARPDRIVE_S2I_ROOT}/bin/assemble
+
+echo " -----> Running Sphinx site builder."
+
+cd ${WARPDRIVE_SRC_ROOT}/${BUILDER_DOCUMENT_ROOT}
+
+make html BUILDDIR=${WARPDRIVE_APP_ROOT}/data
+
+cd ${WARPDRIVE_SRC_ROOT}
