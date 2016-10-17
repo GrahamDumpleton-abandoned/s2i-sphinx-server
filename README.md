@@ -9,7 +9,7 @@ To use this with OpenShift, it is a simple matter of creating a new application 
 As an example, to build and host the the [Sphinx site](https://github.com/sphinx-doc/sphinx), you only need run:
 
 ```
-oc new-app getwarped/s2i-sphinx-server:1.4~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=/doc
+oc new-app getwarped/s2i-sphinx-server:1.4~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=doc
 
 oc expose svc/sphinx-site
 ```
