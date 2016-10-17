@@ -74,7 +74,7 @@
                         },
                         "env": [
                             {
-                                "name": "BUILDER_DOCUMENT_ROOT",
+                                "name": "DOCUMENT_ROOT",
                                 "value": "${DOCUMENT_ROOT}"
                             }
                         ]
