@@ -31,10 +31,10 @@
             "spec": {
                 "tags": [
                     {
-                        "name": "2.3",
+                        "name": "1.4",
                         "from": {
                             "kind": "DockerImage",
-                            "name": "getwarped/s2i-sphinx-server:2.3"
+                            "name": "getwarped/s2i-sphinx-server:1.4"
                         }
                     }
                 ]
@@ -70,7 +70,7 @@
                     "sourceStrategy": {
                         "from": {
                             "kind": "ImageStreamTag",
-                            "name": "${APPLICATION_NAME}-s2i:2.3"
+                            "name": "${APPLICATION_NAME}-s2i:1.4"
                         },
                         "env": [
                             {

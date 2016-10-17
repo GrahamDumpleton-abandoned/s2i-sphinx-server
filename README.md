@@ -9,7 +9,7 @@ To use this with OpenShift, it is a simple matter of creating a new application 
 As an example, to build and host the the [Sphinx site](https://github.com/sphinx-doc/sphinx), you only need run:
 
 ```
-oc new-app getwarped/s2i-sphinx-server:2.3~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=/doc
+oc new-app getwarped/s2i-sphinx-server:1.4~https://github.com/sphinx-doc/sphinx.git --name sphinx-site --env DOCUMENT_ROOT=/doc
 
 oc expose svc/sphinx-site
 ```
@@ -96,7 +96,7 @@ It is possible to use the ``app`` label if deleting all resource objects after h
 To create a standalone Docker-formatted image, you need to [install](https://github.com/openshift/source-to-image/releases) the ``s2i`` program from the Source-to-Image (S2I) project locally. Once you have this installed, you would run within your Git repository:
 
 ```
-s2i build . getwarped/s2i-sphinx-server:2.3 mysphinxsite
+s2i build . getwarped/s2i-sphinx-server:1.4 mysphinxsite
 ```
 
 In this case this will create a Docker-formatted image called ``mysphinxsite``. You can then run the image using:
